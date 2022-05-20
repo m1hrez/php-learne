@@ -1,0 +1,260 @@
+**********************************************
+Coder : İskender Eren Göktaş
+Content : Php Learne
+City : Kırşehir / Merkez Turkey
+**********************************************
+
+Php Nedir?
+- php hypertext preprosessor yani tükçesi hiper metin ön işlemcisi
+php web sayfaların back-end kısmında yer alır yani kullanıcı arayüzünde ilişkisi yoktur.
+
+Php Nasıl Yazılır?
+
+-- Php html'de gömülen dildir. o yüzde html tagları arasında <?php content ?> olarak yazılır.
+
+***********************************************************************
+Php de Yorum Tagları
+
+phpde 3 adet yorum şekili vardır bunlar;
+<?php 
+	// --> Bir satırı kaplar 
+	# --> Bir satırı kaplar
+	/* Content */ --> Birden fazla satırı kaplar
+?>
+*******************************************************************
+Php'de Ekrana Baskı
+
+php de ekrana veri basmak için 2 adet kod kullanılır bunlar;
+<?php 
+	echo "Content"; // Echo komutu her zaman kullanılır.
+	print(Content); // Print komutu sadece dizilerde kullanılır.
+?>
+********************************************************************
+Php'de Birleştirme Operatörü
+
+php'de birleştirme nokta ile oluşur
+<?php 
+
+	echo "İskender"."Eren";
+	Çıktı : İskenderEren
+?>
+*******************************************************************
+Php'de HTML Taglarını Aktarmak
+
+<?php 
+	echo "HTML TAGI";
+	echo "<br>";
+
+?>
+******************************************************************
+Php'de Değişkenler
+
+<?php 
+	$degisken_ismi = "Değişken İçeriği";
+
+/*
+Değişken Olmuşturma Kuralları
+- Türkçe kelime olmaması gerek
+- Boşluk olmaması gerek
+- Özel karakter kullanılamaz
+- Sayı ile başlayamaz ancak sayı ile bitebilir
+- Büyük küçük uyumluluğu vardır
+*/
+?>
+*******************************************************************
+Php'de Metametik Operatörleri
+
+<?php 
+
++ -> Toplama 
+- -> Çıkarma
+* -> Çarpma
+/ -> Bölme
+
+?>
+********************************************************************
+Php'de Atama Operatörleri
+<?php 
+
+$toplama = 100;
+
+$toplama++; // Burada +1 verir
+$toplama--; // Burada -1 verir
+
+$toplama += 100; // Burada ise 100 + 100 değeri eşleşir
+$toplama -= 100; // Burada ise 200 - 100 değeri eşleşir
+$toplama *= 100; // Burada ise 100 * 100 değeri eşleşir
+$toplama /= 100; Burada ise 1000/100 değeri eşleşir
+
+?>
+*******************************************************************
+Php'de Yoksayma İşaretleri
+<?php 
+$name = "İskender";
+echo "Herkese merhaba arkadaşlar benim adım $name";
+Çıktısı : Herkese merhaba arkadaşlar benim adım iskender
+
+echo "Herkese merhaba arkadaşlar benim adım \$name";
+Çıktısı : Herkese merhaba arkadaşlar benim adım $name
+?>
+********************************************************************
+Php'de Diziler
+<?php 
+
+$names = array("İskender","Eren","Goktas");
+//  Phpde diziler oluşurken array fonksiyonunu kullanılır.
+
+echo $names;
+Çıktısı : Array!!!!
+
+Bu yüzden arraylar print komutu ile kullanılır.
+
+print_r($names);
+Array ( [0] => İskender [1] => Eren ) 
+
+Daha düzgün kod için htmldeki pre komutu kullanılır
+
+echo "<pre>";
+print_r($names);
+echo "</pre>";
+Çıktısı:
+Array
+(
+    [0] => İskender
+    [1] => Eren
+)
+
+?>
+***************************************************************
+Php'de Koşul
+
+<?php 
+if ( Koşul ) {
+	code
+} else if (İlk Koşul Tutmaz İse 2. Koşul) {
+	code... 
+} else {
+	Hiç bir koşul tutmaz ise çalışacak kodlar
+}
+?>
+**************************************************************
+Php'de Döngüler
+
+<?php 
+
+For Döngüsü
+// for döngsünde ilk değişken oluşturulur ortada ise değişkenin koşulu ve ardından arttırma ile kodlar çalışır.
+for ($i = 0; $i < 10 $i++;{
+	code 
+}
+
+While Döngüsü
+
+while (koşul){
+	code
+	// while de ise değişken dışarıda koşul ortada ve görev içeride yapılır.
+}
+
+Foreach Döngüsü
+
+foreach ($dizi_name as $key){
+	echo $key;
+	// foreach döngüsü tamamen diziler içindir
+}
+
+?>
+**************************************************************
+Php'de Fonksiyonlar 
+
+<?php 
+
+
+
+// Nasıl Oluşturulur?
+
+function fonksiyon_name($deger,$deger2....){
+	codess
+}
+fonksiyon_name(1,2....);
+
+
+
+
+// Boş Değer Nasıl Doldurulur?
+
+fonction iskender($name = "Your Name", $lastName = "Your LastName"){
+	codesss
+}
+
+
+
+// Fonksiyonlarda return nedir?
+/*
+Fonksiyonlarda return degeri bize çıktı vermeden arka planda çalışıp 
+biz ne zaman yazdırmak ister isek o zaman yazmasını istediğimiz zamanlarda kullanılır
+*/
+
+
+
+// Global Değişkeni
+/* 
+Fonksiyonlarda bazen dışarıdan bir değişken almak gerekir mesela:
+$name  = "İskender Eren";
+fonction deger($a){
+	global $name;
+	// Burada dışarıdaki bir değişkeni fonksiyonumuza tanıttık artık onu tanıyor
+
+
+
+// Tüm Fonksiyonları Nasıl Listeleriz?
+$all_fonctions = get_defined_fonctions(); // Bu bir dizi olarak çıkar
+echo "<pre>";
+print_r($all_fonctions);
+echo "</pre>";
+?>
+**************************************************************
+Php'de Sessionlar
+
+<?php 
+
+// Nasıl Oluşturulur?
+$_SESSİON["session_name"] = "SESSİON CONTENT";
+
+// Session kullanırken sayfa başında şu komutu her zaman yazarız:
+session_start(); // Bu sayede session'u başlatmış oluruz.
+
+// Tekli Ve Tüm Sessionları Nasıl Sileriz?
+
+unset(SESSİONS_NAME); // Unset komutu tekli şekilde siler
+session_destroy(); // Bu komut ise sayfadaki tüm sessionları siler
+?>
+**************************************************************
+Pph'de Cookie'ler 
+<?php 
+
+// Nasıl Oluşturulur?
+$NameAndLastname = "İskender Eren Goktas";
+setcookie("cookie_name",$NameAndLastname);
+echo $_COOKIE["cookie_name"];
+
+
+// Nasıl Zaman Verilir?
+// Tabi bunu yaparken saat ayarını yapmamız lazım : date_default_timezone_set("Europe/Istanbul");
+$NameAndLastname = "İskender Eren Goktas";
+setcookie("cookie_name",$NameAndLastname, time()+3600);
+echo $_COOKIE["cookie_name"];
+
+	Süre Arttırma
+
+
+
+setcookie("cookie_name",$NameAndLastname, strtotime("+30 seconds")); // 30 saniye
+setcookie("cookie_name",$NameAndLastname, strtotime("+1 hours")); // 1 saat
+setcookie("cookie_name",$NameAndLastname, strtotime("+1 day")); // 1 gün
+setcookie("cookie_name",$NameAndLastname, strtotime("+1 week")); // 1 hafta
+
+// Nasıl Sileriz?
+etcookie("cookie_name",$NameAndLastname, strtotime("+1 week")); // 1 haftalık cookie oluşturmuş isek aynısından bir daha amaaa:
+etcookie("cookie_name","",strtotime("-1 week")); bu şekilde
+
+?>
